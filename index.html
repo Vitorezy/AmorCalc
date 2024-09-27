@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora do amor ♡</title>
+    <link
+      rel="shortcut icon"
+      href="imagens/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Escolha os nomes dos apaixonados!</h1>
+      <form id="container_nomes">
+        <div class="box_input">
+          <label for="nome1"> Primeiro nome </label>
+          <input
+            required
+            type="text"
+            name="nome1"
+            id="nome1"
+            placeholder="O primeiro nome aqui"
+          />
+        </div>
+        <div class="box_input">
+          <label for="nome2"> Segundo nome </label>
+          <input
+            required
+            type="text"
+            name="nome2"
+            id="nome2"
+            placeholder="O segundo nome aqui"
+          />
+        </div>
+        <div id="botao_final">
+          <input type="button" value="Calcular" id="btn_calcular" />
+          <input type="reset" value="Recomeçar" />
+        </div>
+      </form>
+      <div id="porcentagemresult"></div>
+
+      <div id="caixa_manipular">
+        <p>Manipule dois nomes e a porcentagem de combinação</p>
+        <form>
+          <label for="nome1chave">nome 1: </label>
+          <input
+            class="input_manipular"
+            type="text"
+            name="nome1chave"
+            id="nome1chave"
+          />
+          <label for="nome1chave">nome 2: </label>
+          <input
+            class="input_manipular"
+            type="text"
+            name="nome2chave"
+            id="nome2chave"
+          />
+          <label for="porcentagem_manipulada" class="input_manipular"
+            >Porcentagem:
+          </label>
+          <input
+            type="number"
+            name="porcentagem_manipulada"
+            id="porcentagem_manipulada"
+          />
+          <div id="botao_final_manipulados">
+            <input type="button" id="enviar_nome_manipulado" value="Pronto" />
+            <input type="reset" value="Resetar" />
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
