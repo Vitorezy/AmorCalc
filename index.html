@@ -40,7 +40,9 @@
           <input type="button" value="Calcular" id="btn_calcular" />
           <input type="reset" value="Recomeçar" />
         </div>
+        
       </form>
+      <textarea name="descricao_resultado" id="descricao_resultado" disabled cols="40" rows="6"></textarea>
       <div id="porcentagemresult"></div>
 
       <div id="caixa_manipular">
@@ -65,6 +67,7 @@
           </label>
           <input
             type="number"
+            maxlength="1000"
             name="porcentagem_manipulada"
             id="porcentagem_manipulada"
           />
