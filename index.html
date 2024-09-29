@@ -14,7 +14,10 @@
   </head>
   <body>
     <main>
-      <h1>Escolha os nomes dos apaixonados!</h1>
+      <input type="button" name="botao_escondido" id="botao_escondido">
+      <img id="coracao" src="imagens/coraçãoimg.png" alt="">
+      <img id="cupido" src="imagens/cupido.png" alt="">
+      <h1>Calcule o quanto você combina com o seu parceiro!</h1>
       <form id="container_nomes">
         <div class="box_input">
           <label for="nome1"> Primeiro nome </label>
@@ -23,31 +26,37 @@
             type="text"
             name="nome1"
             id="nome1"
-            placeholder="O primeiro nome aqui"
+            placeholder="O primeiro nome aqui!"
+            maxlength="20"
+            autocapitalize="on"
+            spellcheck="false"
           />
         </div>
         <div class="box_input">
-          <label for="nome2"> Segundo nome </label>
+          <label for="nome2"> Segundo nome</label>
           <input
             required
             type="text"
             name="nome2"
             id="nome2"
-            placeholder="O segundo nome aqui"
+            placeholder="O segundo nome aqui!"
+            maxlength="20"
+            autocapitalize="on"
+            spellcheck="false"
           />
         </div>
         <div id="botao_final">
           <input type="button" value="Calcular" id="btn_calcular" />
-          <input type="reset" value="Recomeçar" />
+          <input type="reset" value="Recomeçar" id="btn_resetar" />
         </div>
         
       </form>
-      <textarea name="descricao_resultado" id="descricao_resultado" disabled cols="40" rows="6"></textarea>
+      <textarea name="descricao_resultado" id="descricao_resultado" disabled ></textarea>
       <div id="porcentagemresult"></div>
 
       <div id="caixa_manipular">
         <p>Manipule dois nomes e a porcentagem de combinação</p>
-        <form>
+        <form id="container_manipulado">
           <label for="nome1chave">nome 1: </label>
           <input
             class="input_manipular"
@@ -70,6 +79,7 @@
             maxlength="1000"
             name="porcentagem_manipulada"
             id="porcentagem_manipulada"
+            class="input_manipular"
           />
           <div id="botao_final_manipulados">
             <input type="button" id="enviar_nome_manipulado" value="Pronto" />

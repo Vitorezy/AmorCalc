@@ -1,11 +1,50 @@
 body {
-  background-color: rgb(134, 0, 0);
+  background-color: rgb(143, 11, 11);
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  font-family: 'anton', Arial, Helvetica, sans-serif;
+}
+@font-face {
+  font-family: 'bebas';
+  src: url(fontes/BebasNeue-Regular.ttf);
+}
+@font-face {
+  font-family: 'anton';
+  src: url(fontes/Anton-Regular.ttf);
+}
+#botao_escondido { 
+  position: absolute;
+  margin: 0;
+  right: 0%;
+  top: 0%;
+  scale: 20%;
+  background-color: rgb(166, 17, 17);
+}
+img#cupido { 
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  height: 350px;
+  width: 350px;
+}
+img#coracao { 
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  background-color: rgba(255, 0, 0, 0.182);
+  border: 2px solid rgba(255, 0, 0, 0.662);
+  border-radius: 40%;
+  height: 100px;
+  width: 100px;
+  rotate: -25deg;
 }
 main > h1 {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
+  font-weight: 600;
   color: white;
+  font-family: 'bebas', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
 }
 form#container_nomes {
   display: flex;
@@ -22,18 +61,21 @@ form#container_nomes {
 }
 #porcentagemresult {
   position: absolute;
-  font-size: 3rem;
+  font-size: 2rem;
   top: 53%;
+  display: none;
   left: 50%;
   border: 2px solid rgb(255, 255, 255);
   color: white;
   transform: translate(-50%);
   border-radius: 20px;
+  min-width: 15%;
   background-color: rgb(0, 0, 0);
 }
 #container_nomes label {
   text-shadow: -1px 1px 3px black;
   color: white;
+  font-weight: 500;
   font-size: 2rem;
 }
 #container_nomes input[type="text"] {
@@ -41,21 +83,30 @@ form#container_nomes {
   font-weight: 600;
   font-size: 1.8rem;
   text-align: center;
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid rgba(255, 0, 0, 0.749);
   background-color: rgb(0, 0, 0);
   position: relative;
-  width: 50%;
+  min-width: 20%;
   text-shadow: -1px 1px 3px black;
   border-radius: 20px;
   box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 textarea { 
   position: absolute;
-  top: 82%;
+  top: 80%;
+  color: white;
+  border: 2px solid white;
   transform: translate(-50%, -50%);
   resize: none;
-  box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.5);
   font-size: 2rem;
+  text-shadow: -1px 0px 3px black;
+  display: none;
+  border-radius: 15px;
+  text-indent: 10px;
+  width: 60%;
+  height: 30%;
+  font-weight: 500;
 }
 .box_input {
   display: flex;
@@ -73,6 +124,10 @@ textarea {
   height: 30%;
   width: 20%;
   background-color: rgb(255, 255, 255);
+  border: 2px solid black;
+}
+.input_manipular { 
+  border-radius: 20px;
 }
 #botao_final_manipulados {
   position: relative;
@@ -86,29 +141,92 @@ textarea {
 }
 #botao_final {
   display: flex;
-  width: 100%;
+  width: 80%;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 10%;
-  gap: 1%;
+  height: 8%;
+  gap: 0.7%;
 }
 #botao_final > input {
   flex-grow: 0;
   flex-shrink: 0;
   color: white;
-  width: 10%;
-  height: 80%;
+  width: 78px;
+  height: 23px;
   border: 2px solid white;
-  border-radius: 10px;
+  border-radius:15px;
   box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.5);
+  transition-duration: .3s;
+  transition-property: scale;
+  transition-timing-function: ease;
 }
 #botao_final > input:hover { 
   filter: brightness(120%);
+  scale: 105%;
 }
 #botao_final > input[type="button"] {
-  background-color: green;
+  background-color: rgba(0, 128, 0, 0.8);
 }
 #botao_final > input[type="reset"] {
-  background-color: rgb(64, 0, 26);
+  background-color: rgba(214, 0, 0, 0.8);
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) { 
+  img#cupido { 
+    top: 40%;
+    left: 74%;
+    height: 150px;
+    width: 150px;
+  }
+  img#coracao { 
+    top: 2%;
+    left: 2%;
+    height: 50px;
+    width: 50px;
+  }
+  main > h1 {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+  form#container_nomes {
+    height: 30%;
+    gap: 10%;
+    top: 30%;
+  }
+  #porcentagemresult {
+    top: 50%;
+    min-width: 15%;
+  }
+  #container_nomes label {
+    font-size: 1.5rem;
+  }
+  textarea { 
+    width: 85%;
+  }
+  #container_manipulado { 
+    position: absolute;
+    top: 32%;
+  }
+  #caixa_manipular {
+    display: none;
+    border-radius: 20px;
+    position: absolute;
+    right: 0.5%;
+    top: 0.5%;
+    height: 35%;
+    width: 35%;
+    background-color: rgb(255, 255, 255);
+  }
+  #botao_final_manipulados {
+    position: relative;
+    top: 10px;
+  }
+  .input_manipular {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    display: block;
+    width: 70%;
+  }
 }
